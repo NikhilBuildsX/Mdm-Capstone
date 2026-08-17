@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prescriptions | Smart Healthcare Companion</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prescriptions.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+
+            <div>
+                <h2>HealthCare</h2>
+                <span>Companion</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="menu-title">MENU</p>
+
+            <a href="index.html" class="nav-link">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="medicines.html" class="nav-link">
+                <i class="bi bi-capsule"></i>
+                <span>Medicines</span>
+            </a>
+
+            <a href="prescriptions.html" class="nav-link active">
+                <i class="bi bi-file-earmark-medical"></i>
+                <span>Prescriptions</span>
+            </a>
+
+            <a href="appointments.html" class="nav-link">
+                <i class="bi bi-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-folder2-open"></i>
+                <span>Medical Reports</span>
+            </a>
+
+            <p class="menu-title second-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-person"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+
+                <i class="bi bi-question-circle"></i>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Contact support</p>
+                </div>
+
+            </div>
+
+            <a href="login.html" class="nav-link logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="page-title">
+
+                <h1>Prescriptions</h1>
+
+                <p>
+                    Manage and organize your prescriptions
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        ND
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Nikhil Dubey</strong>
+                        <span>Patient</span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= PAGE ================= -->
+
+        <section class="prescriptions-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="prescription-page-header">
+
+                <div>
+
+                    <h2>My Prescriptions</h2>
+
+                    <p>
+                        Keep all your doctor prescriptions
+                        organized in one place.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="openPrescriptionModal"
+                    type="button"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    Add Prescription
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="prescription-stats">
+
+
+                <div class="prescription-stat-card">
+
+                    <div class="prescription-stat-icon blue">
+                        <i class="bi bi-file-earmark-medical"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Prescriptions</span>
+                        <h3 id="totalPrescriptionCount">3</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="prescription-stat-card">
+
+                    <div class="prescription-stat-icon green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
+                    <div>
+                        <span>Active</span>
+                        <h3 id="activePrescriptionCount">2</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="prescription-stat-card">
+
+                    <div class="prescription-stat-icon purple">
+                        <i class="bi bi-capsule"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Medicines</span>
+                        <h3 id="medicineCount">6</h3>
+                    </div>
+
+                </div>
+
+
+                <div class="prescription-stat-card">
+
+                    <div class="prescription-stat-icon orange">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+
+                    <div>
+                        <span>Recent</span>
+                        <h3>1</h3>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= TOOLBAR ================= -->
+
+            <div class="prescription-toolbar">
+
+                <div class="prescription-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="prescriptionSearch"
+                        placeholder="Search doctor, diagnosis or medicine..."
+                    >
+
+                </div>
+
+
+                <select id="prescriptionFilter">
+
+                    <option value="all">
+                        All Prescriptions
+                    </option>
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================= PRESCRIPTION LIST ================= -->
+
+            <div
+                class="prescription-list"
+                id="prescriptionList"
+            >
+
+
+                <!-- PRESCRIPTION 1 -->
+
+                <div
+                    class="prescription-card"
+                    data-status="active"
+                    data-search="dr rohan mehta hypertension blood pressure amlodipine"
+                >
+
+                    <div class="prescription-card-top">
+
+                        <div class="prescription-doctor">
+
+                            <div class="prescription-doctor-icon">
+                                <i class="bi bi-person"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dr. Rohan Mehta
+                                </h3>
+
+                                <p>
+                                    Cardiologist
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="prescription-status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-details">
+
+                        <div>
+
+                            <span>Prescription Date</span>
+
+                            <strong>
+                                15 Aug 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Diagnosis</span>
+
+                            <strong>
+                                Hypertension
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Medicines</span>
+
+                            <strong>
+                                3 Medicines
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-preview">
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Amlodipine 5mg
+                        </span>
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Telmisartan 40mg
+                        </span>
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Atorvastatin 10mg
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-actions">
+
+                        <button class="view-prescription-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View Prescription
+
+                        </button>
+
+
+                        <button class="print-prescription-btn">
+
+                            <i class="bi bi-printer"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRESCRIPTION 2 -->
+
+                <div
+                    class="prescription-card"
+                    data-status="active"
+                    data-search="dr priya shah vitamin deficiency vitamin d"
+                >
+
+                    <div class="prescription-card-top">
+
+                        <div class="prescription-doctor">
+
+                            <div class="prescription-doctor-icon purple">
+                                <i class="bi bi-person"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dr. Priya Shah
+                                </h3>
+
+                                <p>
+                                    General Physician
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="prescription-status active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-details">
+
+                        <div>
+
+                            <span>Prescription Date</span>
+
+                            <strong>
+                                10 Aug 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Diagnosis</span>
+
+                            <strong>
+                                Vitamin D Deficiency
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Medicines</span>
+
+                            <strong>
+                                2 Medicines
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-preview">
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Vitamin D3
+                        </span>
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Calcium 500mg
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-actions">
+
+                        <button class="view-prescription-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View Prescription
+
+                        </button>
+
+
+                        <button class="print-prescription-btn">
+
+                            <i class="bi bi-printer"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRESCRIPTION 3 -->
+
+                <div
+                    class="prescription-card"
+                    data-status="completed"
+                    data-search="dr amit patel fever paracetamol"
+                >
+
+                    <div class="prescription-card-top">
+
+                        <div class="prescription-doctor">
+
+                            <div class="prescription-doctor-icon green">
+                                <i class="bi bi-person"></i>
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Dr. Amit Patel
+                                </h3>
+
+                                <p>
+                                    General Physician
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="prescription-status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-details">
+
+                        <div>
+
+                            <span>Prescription Date</span>
+
+                            <strong>
+                                02 Aug 2026
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Diagnosis</span>
+
+                            <strong>
+                                Viral Fever
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Medicines</span>
+
+                            <strong>
+                                1 Medicine
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-preview">
+
+                        <span>
+                            <i class="bi bi-capsule"></i>
+                            Paracetamol 650mg
+                        </span>
+
+                    </div>
+
+
+                    <div class="prescription-actions">
+
+                        <button class="view-prescription-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View Prescription
+
+                        </button>
+
+
+                        <button class="print-prescription-btn">
+
+                            <i class="bi bi-printer"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= ADD PRESCRIPTION MODAL ================= -->
+
+    <div
+        class="prescription-modal-overlay"
+        id="prescriptionModal"
+    >
+
+        <div class="prescription-modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Add Prescription</h2>
+
+                    <p>
+                        Enter the prescription details.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    id="closePrescriptionModal"
+                    type="button"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="prescriptionForm">
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Doctor Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prescriptionDoctor"
+                            placeholder="Dr. Doctor Name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Specialization
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prescriptionSpecialization"
+                            placeholder="e.g. Cardiologist"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Prescription Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="prescriptionDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Diagnosis
+                        </label>
+
+                        <input
+                            type="text"
+                            id="prescriptionDiagnosis"
+                            placeholder="e.g. Hypertension"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        Medicines
+                    </label>
+
+                    <textarea
+                        id="prescriptionMedicines"
+                        rows="3"
+                        placeholder="Example: Amlodipine 5mg, once daily&#10;Telmisartan 40mg, twice daily"
+                        required
+                    ></textarea>
+
+                    <small>
+                        Enter each medicine on a new line.
+                    </small>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        Doctor's Notes
+                    </label>
+
+                    <textarea
+                        id="prescriptionNotes"
+                        rows="3"
+                        placeholder="Additional instructions..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelPrescription"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Add Prescription
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= VIEW MODAL ================= -->
+
+    <div
+        class="prescription-modal-overlay"
+        id="viewPrescriptionModal"
+    >
+
+        <div class="prescription-view-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Prescription Details</h2>
+
+                    <p>
+                        Smart Healthcare Companion
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    id="closeViewModal"
+                    type="button"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+
+            <div id="prescriptionViewContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="prescriptions.js"></script>
+
+</body>
+
+</html>

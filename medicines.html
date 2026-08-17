@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Medicines | Smart Healthcare Companion</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="medicines.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+
+            <div>
+                <h2>HealthCare</h2>
+                <span>Companion</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="menu-title">MENU</p>
+
+
+            <a href="index.html" class="nav-link">
+
+                <i class="bi bi-grid-1x2-fill"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="medicines.html" class="nav-link active">
+
+                <i class="bi bi-capsule"></i>
+
+                <span>Medicines</span>
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <i class="bi bi-file-earmark-medical"></i>
+
+                <span>Prescriptions</span>
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <i class="bi bi-calendar-check"></i>
+
+                <span>Appointments</span>
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <i class="bi bi-folder2-open"></i>
+
+                <span>Medical Reports</span>
+
+            </a>
+
+
+            <p class="menu-title second-title">
+                ACCOUNT
+            </p>
+
+
+            <a href="#" class="nav-link">
+
+                <i class="bi bi-person"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+
+            <a href="#" class="nav-link">
+
+                <i class="bi bi-gear"></i>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+
+                <i class="bi bi-question-circle"></i>
+
+                <div>
+
+                    <strong>Need Help?</strong>
+
+                    <p>Contact support</p>
+
+                </div>
+
+            </div>
+
+
+            <a href="login.html" class="nav-link logout">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu">
+
+                <i class="bi bi-list"></i>
+
+            </div>
+
+
+            <div class="page-title">
+
+                <h1>Medicines</h1>
+
+                <p>Manage your medications and reminders</p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-btn">
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        ND
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Nikhil Dubey</strong>
+
+                        <span>Patient</span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= MEDICINES CONTENT ================= -->
+
+        <section class="medicines-page">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="medicine-page-header">
+
+                <div>
+
+                    <h2>My Medicines</h2>
+
+                    <p>
+                        Keep track of your medications and
+                        never miss a dose.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="openMedicineModal"
+                >
+
+                    <i class="bi bi-plus-lg"></i>
+
+                    Add Medicine
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= SUMMARY CARDS ================= -->
+
+            <div class="medicine-stats">
+
+
+                <div class="medicine-stat-card">
+
+                    <div class="medicine-stat-icon blue">
+
+                        <i class="bi bi-capsule"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Total Medicines</span>
+
+                        <h3 id="totalMedicines">4</h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="medicine-stat-card">
+
+                    <div class="medicine-stat-icon green">
+
+                        <i class="bi bi-check-circle"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Taken Today</span>
+
+                        <h3 id="takenMedicines">1</h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="medicine-stat-card">
+
+                    <div class="medicine-stat-icon orange">
+
+                        <i class="bi bi-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Pending Today</span>
+
+                        <h3 id="pendingMedicines">3</h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="medicine-stat-card">
+
+                    <div class="medicine-stat-icon purple">
+
+                        <i class="bi bi-alarm"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>Next Reminder</span>
+
+                        <h3>2:00 PM</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= TOOLBAR ================= -->
+
+            <div class="medicine-toolbar">
+
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="medicineSearch"
+                        placeholder="Search medicines..."
+                    >
+
+                </div>
+
+
+                <select id="medicineFilter">
+
+                    <option value="all">
+                        All Medicines
+                    </option>
+
+                    <option value="taken">
+                        Taken
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ================= MEDICINE LIST ================= -->
+
+            <div
+                class="medicine-grid"
+                id="medicineList"
+            >
+
+
+                <!-- MEDICINE 1 -->
+
+                <div
+                    class="medicine-card"
+                    data-status="taken"
+                    data-name="Paracetamol"
+                >
+
+                    <div class="medicine-card-header">
+
+                        <div class="medicine-main-icon blue-bg">
+
+                            <i class="bi bi-capsule"></i>
+
+                        </div>
+
+
+                        <div class="medicine-actions">
+
+                            <button
+                                class="icon-btn edit-btn"
+                                title="Edit"
+                            >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button
+                                class="icon-btn delete-btn"
+                                title="Delete"
+                            >
+                                <i class="bi bi-trash3"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>Paracetamol</h3>
+
+                    <p class="medicine-description">
+                        Pain relief and fever
+                    </p>
+
+
+                    <div class="medicine-details">
+
+                        <div>
+
+                            <i class="bi bi-capsule"></i>
+
+                            <span>
+                                500 mg • 1 tablet
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            <span>
+                                Once daily
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>
+                                15 Aug – 20 Aug
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-card-footer">
+
+                        <div class="reminder">
+
+                            <i class="bi bi-alarm"></i>
+
+                            <strong>
+                                8:00 AM
+                            </strong>
+
+                        </div>
+
+
+                        <span class="status taken">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            Taken
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEDICINE 2 -->
+
+                <div
+                    class="medicine-card"
+                    data-status="pending"
+                    data-name="Vitamin D3"
+                >
+
+                    <div class="medicine-card-header">
+
+                        <div class="medicine-main-icon green-bg">
+
+                            <i class="bi bi-capsule"></i>
+
+                        </div>
+
+
+                        <div class="medicine-actions">
+
+                            <button
+                                class="icon-btn edit-btn"
+                                title="Edit"
+                            >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button
+                                class="icon-btn delete-btn"
+                                title="Delete"
+                            >
+                                <i class="bi bi-trash3"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>Vitamin D3</h3>
+
+                    <p class="medicine-description">
+                        Vitamin supplement
+                    </p>
+
+
+                    <div class="medicine-details">
+
+                        <div>
+
+                            <i class="bi bi-capsule"></i>
+
+                            <span>
+                                1000 IU • 1 tablet
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            <span>
+                                Once daily
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>
+                                15 Aug – 30 Aug
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-card-footer">
+
+                        <div class="reminder">
+
+                            <i class="bi bi-alarm"></i>
+
+                            <strong>
+                                2:00 PM
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="status pending mark-taken"
+                        >
+
+                            <i class="bi bi-circle"></i>
+
+                            Mark Taken
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEDICINE 3 -->
+
+                <div
+                    class="medicine-card"
+                    data-status="pending"
+                    data-name="Calcium"
+                >
+
+                    <div class="medicine-card-header">
+
+                        <div class="medicine-main-icon orange-bg">
+
+                            <i class="bi bi-capsule"></i>
+
+                        </div>
+
+
+                        <div class="medicine-actions">
+
+                            <button
+                                class="icon-btn edit-btn"
+                            >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button
+                                class="icon-btn delete-btn"
+                            >
+                                <i class="bi bi-trash3"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>Calcium</h3>
+
+                    <p class="medicine-description">
+                        Calcium supplement
+                    </p>
+
+
+                    <div class="medicine-details">
+
+                        <div>
+
+                            <i class="bi bi-capsule"></i>
+
+                            <span>
+                                500 mg • 1 tablet
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            <span>
+                                Once daily
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>
+                                15 Aug – 30 Aug
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-card-footer">
+
+                        <div class="reminder">
+
+                            <i class="bi bi-alarm"></i>
+
+                            <strong>
+                                8:00 PM
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="status pending mark-taken"
+                        >
+
+                            <i class="bi bi-circle"></i>
+
+                            Mark Taken
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MEDICINE 4 -->
+
+                <div
+                    class="medicine-card"
+                    data-status="pending"
+                    data-name="Omega 3"
+                >
+
+                    <div class="medicine-card-header">
+
+                        <div class="medicine-main-icon purple-bg">
+
+                            <i class="bi bi-capsule"></i>
+
+                        </div>
+
+
+                        <div class="medicine-actions">
+
+                            <button
+                                class="icon-btn edit-btn"
+                            >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button
+                                class="icon-btn delete-btn"
+                            >
+                                <i class="bi bi-trash3"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>Omega 3</h3>
+
+                    <p class="medicine-description">
+                        Dietary supplement
+                    </p>
+
+
+                    <div class="medicine-details">
+
+                        <div>
+
+                            <i class="bi bi-capsule"></i>
+
+                            <span>
+                                1000 mg • 1 capsule
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            <span>
+                                Once daily
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <i class="bi bi-calendar3"></i>
+
+                            <span>
+                                15 Aug – 30 Aug
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="medicine-card-footer">
+
+                        <div class="reminder">
+
+                            <i class="bi bi-alarm"></i>
+
+                            <strong>
+                                10:00 PM
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            class="status pending mark-taken"
+                        >
+
+                            <i class="bi bi-circle"></i>
+
+                            Mark Taken
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= ADD MEDICINE MODAL ================= -->
+
+    <div
+        class="modal-overlay"
+        id="medicineModal"
+    >
+
+        <div class="medicine-modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Add New Medicine</h2>
+
+                    <p>
+                        Enter the medication details below.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    id="closeMedicineModal"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="medicineForm">
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Medicine Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicineName"
+                            placeholder="e.g. Paracetamol"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Dosage
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicineDosage"
+                            placeholder="e.g. 500 mg"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Frequency
+                        </label>
+
+                        <select
+                            id="medicineFrequency"
+                            required
+                        >
+
+                            <option value="">
+                                Select frequency
+                            </option>
+
+                            <option>
+                                Once daily
+                            </option>
+
+                            <option>
+                                Twice daily
+                            </option>
+
+                            <option>
+                                Thrice daily
+                            </option>
+
+                            <option>
+                                As needed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Reminder Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="medicineTime"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="startDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="endDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label>
+                        Purpose / Notes
+                    </label>
+
+                    <textarea
+                        id="medicineNotes"
+                        rows="3"
+                        placeholder="e.g. Take after food"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelMedicine"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        <i class="bi bi-plus-lg"></i>
+
+                        Add Medicine
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="medicines.js"></script>
+
+</body>
+
+</html>

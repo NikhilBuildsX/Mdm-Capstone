@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Healthcare Companion</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+
+            <div>
+                <h2>HealthCare</h2>
+                <span>Companion</span>
+            </div>
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="menu-title">MENU</p>
+
+            <a href="#" class="nav-link active">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-capsule"></i>
+                <span>Medicines</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-file-earmark-medical"></i>
+                <span>Prescriptions</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-folder2-open"></i>
+                <span>Medical Reports</span>
+            </a>
+
+
+            <p class="menu-title second-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-person"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+                <i class="bi bi-question-circle"></i>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Contact support</p>
+                </div>
+            </div>
+
+            <a href="#" class="nav-link logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="page-title">
+                <h1>Dashboard</h1>
+                <p>Here's your health overview</p>
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        ND
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Nikhil Dubey</strong>
+                        <span>Patient</span>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <!-- Welcome -->
+
+            <div class="welcome-section">
+
+                <div>
+                    <h2>Good evening, Nikhil 👋</h2>
+
+                    <p>
+                        Stay on top of your health and never miss
+                        an important reminder.
+                    </p>
+                </div>
+
+                <button class="primary-btn">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Record
+                </button>
+
+            </div>
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon medicine-icon">
+                        <i class="bi bi-capsule"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Today's Medicines</span>
+                        <h3>3</h3>
+                        <p class="success-text">
+                            <i class="bi bi-check-circle-fill"></i>
+                            1 completed
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon appointment-icon">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Upcoming Appointments</span>
+                        <h3>2</h3>
+                        <p>Next: Tomorrow</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon report-icon">
+                        <i class="bi bi-file-medical"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Medical Reports</span>
+                        <h3>8</h3>
+                        <p>2 added this month</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon prescription-icon">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Prescriptions</span>
+                        <h3>5</h3>
+                        <p>Last updated 2 days ago</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= MAIN GRID ================= -->
+
+            <div class="content-grid">
+
+
+                <!-- MEDICINES -->
+
+                <div class="dashboard-card medicine-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Today's Medicines</h3>
+                            <p>Monday, 16 August 2026</p>
+                        </div>
+
+                        <a href="#">View All</a>
+
+                    </div>
+
+
+                    <div class="medicine-list">
+
+                        <div class="medicine-item">
+
+                            <div class="medicine-left">
+
+                                <div class="medicine-icon-small">
+                                    <i class="bi bi-capsule"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Paracetamol</strong>
+                                    <span>500 mg • 1 tablet</span>
+                                </div>
+
+                            </div>
+
+                            <div class="medicine-time completed">
+                                <i class="bi bi-check-circle-fill"></i>
+                                8:00 AM
+                            </div>
+
+                        </div>
+
+
+                        <div class="medicine-item">
+
+                            <div class="medicine-left">
+
+                                <div class="medicine-icon-small">
+                                    <i class="bi bi-capsule"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Vitamin D3</strong>
+                                    <span>1000 IU • 1 tablet</span>
+                                </div>
+
+                            </div>
+
+                            <div class="medicine-time">
+                                <i class="bi bi-clock"></i>
+                                2:00 PM
+                            </div>
+
+                        </div>
+
+
+                        <div class="medicine-item">
+
+                            <div class="medicine-left">
+
+                                <div class="medicine-icon-small">
+                                    <i class="bi bi-capsule"></i>
+                                </div>
+
+                                <div>
+                                    <strong>Calcium</strong>
+                                    <span>500 mg • 1 tablet</span>
+                                </div>
+
+                            </div>
+
+                            <div class="medicine-time">
+                                <i class="bi bi-clock"></i>
+                                8:00 PM
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="outline-btn">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Medicine
+                    </button>
+
+                </div>
+
+
+                <!-- APPOINTMENT -->
+
+                <div class="dashboard-card appointment-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Next Appointment</h3>
+                            <p>Your upcoming visit</p>
+                        </div>
+
+                        <i class="bi bi-three-dots"></i>
+
+                    </div>
+
+
+                    <div class="doctor-info">
+
+                        <div class="doctor-avatar">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4>Dr. Rahul Sharma</h4>
+                            <span>General Physician</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="appointment-details">
+
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+
+                            <div>
+                                <span>Date</span>
+                                <strong>17 Aug 2026</strong>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <i class="bi bi-clock"></i>
+
+                            <div>
+                                <span>Time</span>
+                                <strong>4:00 PM</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <button class="primary-btn full-width">
+                        View Appointment
+                    </button>
+
+                </div>
+
+
+                <!-- ================= RECENT RECORDS ================= -->
+
+                <div class="dashboard-card records-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h3>Recent Medical Records</h3>
+                            <p>Your latest uploaded documents</p>
+                        </div>
+
+                        <a href="#">View All</a>
+
+                    </div>
+
+
+                    <div class="records-list">
+
+                        <div class="record-item">
+
+                            <div class="record-icon pdf">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                            </div>
+
+                            <div class="record-info">
+                                <strong>Blood Test Report</strong>
+                                <span>PDF • 2.4 MB • 15 Aug 2026</span>
+                            </div>
+
+                            <button class="more-btn">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="record-item">
+
+                            <div class="record-icon image">
+                                <i class="bi bi-file-earmark-image"></i>
+                            </div>
+
+                            <div class="record-info">
+                                <strong>Chest X-Ray</strong>
+                                <span>JPG • 4.1 MB • 10 Aug 2026</span>
+                            </div>
+
+                            <button class="more-btn">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="record-item">
+
+                            <div class="record-icon pdf">
+                                <i class="bi bi-file-earmark-pdf"></i>
+                            </div>
+
+                            <div class="record-info">
+                                <strong>Prescription</strong>
+                                <span>PDF • 1.2 MB • 08 Aug 2026</span>
+                            </div>
+
+                            <button class="more-btn">
+                                <i class="bi bi-three-dots"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= AI SUMMARY ================= -->
+
+                <div class="dashboard-card ai-card">
+
+                    <div class="ai-header">
+
+                        <div class="ai-icon">
+                            <i class="bi bi-stars"></i>
+                        </div>
+
+                        <div>
+                            <h3>AI Health Summary</h3>
+                            <p>Based on your recent records</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-summary">
+
+                        <p>
+                            Your recent health records are available
+                            for review. Generate an AI-powered summary
+                            to understand your uploaded health information
+                            more easily.
+                        </p>
+
+                    </div>
+
+
+                    <button class="ai-btn">
+                        <i class="bi bi-stars"></i>
+                        Generate Health Summary
+                    </button>
+
+                    <small>
+                        AI summaries are for informational purposes
+                        and do not replace professional medical advice.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

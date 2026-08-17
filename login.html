@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | Smart Healthcare Companion</title>
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Authentication CSS -->
+    <link rel="stylesheet" href="auth.css">
+
+</head>
+
+
+<body>
+
+    <main class="auth-container">
+
+        <!-- LEFT SIDE -->
+
+        <section class="auth-left">
+
+            <div class="auth-brand">
+
+                <div class="brand-icon">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                </div>
+
+                <div>
+                    <h2>HealthCare</h2>
+                    <span>Companion</span>
+                </div>
+
+            </div>
+
+
+            <div class="auth-message">
+
+                <div class="large-health-icon">
+                    <i class="bi bi-heart-pulse"></i>
+                </div>
+
+                <h1>Your health,<br>all in one place.</h1>
+
+                <p>
+                    Manage your medicines, appointments,
+                    prescriptions and health records with ease.
+                </p>
+
+                <div class="feature-list">
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Never miss a medication</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Keep your medical records organized</span>
+                    </div>
+
+                    <div>
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Stay updated with appointments</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+
+        <section class="auth-right">
+
+            <div class="auth-form-container">
+
+                <div class="mobile-brand">
+
+                    <div class="brand-icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </div>
+
+                    <div>
+                        <h2>HealthCare</h2>
+                        <span>Companion</span>
+                    </div>
+
+                </div>
+
+
+                <div class="form-heading">
+
+                    <h1>Welcome back 👋</h1>
+
+                    <p>
+                        Login to continue to your health dashboard.
+                    </p>
+
+                </div>
+
+
+                <form id="loginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <a href="#">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <div class="input-wrapper">
+
+                            <i class="bi bi-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="togglePassword"
+                            >
+                                <i class="bi bi-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+
+                    <div class="remember-row">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+
+                            <span>Remember me</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- LOGIN -->
+
+                    <button
+                        type="submit"
+                        class="auth-button"
+                    >
+
+                        <span>Login</span>
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+
+                    <!-- REGISTER -->
+
+                    <p class="switch-auth">
+
+                        Don't have an account?
+
+                        <a href="register.html">
+                            Create an account
+                        </a>
+
+                    </p>
+
+                </form>
+
+
+                <div class="security-note">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <span>
+                        Your health information is kept secure.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="auth.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Reports | Smart Healthcare Companion</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="medical-reports.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+
+            <div>
+                <h2>HealthCare</h2>
+                <span>Companion</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="menu-title">MENU</p>
+
+            <a href="index.html" class="nav-link">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="medicines.html" class="nav-link">
+                <i class="bi bi-capsule"></i>
+                <span>Medicines</span>
+            </a>
+
+            <a href="prescriptions.html" class="nav-link">
+                <i class="bi bi-file-earmark-medical"></i>
+                <span>Prescriptions</span>
+            </a>
+
+            <a href="appointments.html" class="nav-link">
+                <i class="bi bi-calendar-check"></i>
+                <span>Appointments</span>
+            </a>
+
+            <a href="medical-reports.html" class="nav-link active">
+                <i class="bi bi-folder2-open"></i>
+                <span>Medical Reports</span>
+            </a>
+
+            <p class="menu-title second-title">ACCOUNT</p>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-person"></i>
+                <span>Profile</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <i class="bi bi-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="help-box">
+
+                <i class="bi bi-question-circle"></i>
+
+                <div>
+                    <strong>Need Help?</strong>
+                    <p>Contact support</p>
+                </div>
+
+            </div>
+
+            <a href="login.html" class="nav-link logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="page-title">
+
+                <h1>Medical Reports</h1>
+
+                <p>
+                    Store and organize your medical documents
+                </p>
+
+            </div>
+
+
+            <div class="topbar-right">
+
+                <button class="notification-btn">
+                    <i class="bi bi-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile-mini">
+
+                    <div class="avatar">
+                        ND
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Nikhil Dubey</strong>
+                        <span>Patient</span>
+
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+
+        <section class="reports-page">
+
+
+            <!-- HEADER -->
+
+            <div class="reports-page-header">
+
+                <div>
+
+                    <h2>My Medical Reports</h2>
+
+                    <p>
+                        Keep your medical documents safe and organized.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="openReportModal"
+                >
+
+                    <i class="bi bi-cloud-arrow-up"></i>
+
+                    Upload Report
+
+                </button>
+
+            </div>
+
+
+            <!-- INFO BANNER -->
+
+            <div class="reports-info">
+
+                <div class="reports-info-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>Your medical records are important</strong>
+
+                    <p>
+                        Keep your reports organized so you can
+                        easily access them during doctor visits.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="reports-stats">
+
+
+                <div class="report-stat-card">
+
+                    <div class="report-stat-icon blue">
+                        <i class="bi bi-file-earmark-medical"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Total Reports</span>
+
+                        <h3 id="totalReportCount">
+                            5
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-stat-card">
+
+                    <div class="report-stat-icon red">
+                        <i class="bi bi-heart-pulse"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Lab Reports</span>
+
+                        <h3 id="labReportCount">
+                            2
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-stat-card">
+
+                    <div class="report-stat-icon purple">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <div>
+
+                        <span>Prescriptions</span>
+
+                        <h3>
+                            1
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-stat-card">
+
+                    <div class="report-stat-icon green">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+
+                    <div>
+
+                        <span>This Month</span>
+
+                        <h3>
+                            2
+                        </h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+
+            <div class="reports-toolbar">
+
+                <div class="reports-search">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="reportSearch"
+                        placeholder="Search reports..."
+                    >
+
+                </div>
+
+
+                <select id="reportFilter">
+
+                    <option value="all">
+                        All Reports
+                    </option>
+
+                    <option value="lab">
+                        Lab Reports
+                    </option>
+
+                    <option value="prescription">
+                        Prescriptions
+                    </option>
+
+                    <option value="scan">
+                        Scans
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- REPORT LIST -->
+
+            <div
+                class="reports-grid"
+                id="reportsGrid"
+            >
+
+
+                <!-- REPORT 1 -->
+
+                <div
+                    class="report-card"
+                    data-type="lab"
+                    data-search="complete blood count cbc metropolis hospital blood test"
+                >
+
+                    <div class="report-card-header">
+
+                        <div class="report-file-icon lab">
+                            <i class="bi bi-file-earmark-medical"></i>
+                        </div>
+
+                        <button class="report-menu">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card-body">
+
+                        <h3>
+                            Complete Blood Count
+                        </h3>
+
+                        <p>
+                            CBC Blood Test
+                        </p>
+
+
+                        <div class="report-meta">
+
+                            <span>
+                                <i class="bi bi-calendar3"></i>
+                                14 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-hospital"></i>
+                                Metropolis Hospital
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-card-footer">
+
+                        <span class="report-type lab-type">
+                            Lab Report
+                        </span>
+
+
+                        <button class="view-report-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT 2 -->
+
+                <div
+                    class="report-card"
+                    data-type="lab"
+                    data-search="lipid profile cholesterol blood test metropolis"
+                >
+
+                    <div class="report-card-header">
+
+                        <div class="report-file-icon lab">
+                            <i class="bi bi-file-earmark-medical"></i>
+                        </div>
+
+                        <button class="report-menu">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card-body">
+
+                        <h3>
+                            Lipid Profile
+                        </h3>
+
+                        <p>
+                            Cholesterol Test
+                        </p>
+
+
+                        <div class="report-meta">
+
+                            <span>
+                                <i class="bi bi-calendar3"></i>
+                                12 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-hospital"></i>
+                                Metropolis Hospital
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-card-footer">
+
+                        <span class="report-type lab-type">
+                            Lab Report
+                        </span>
+
+
+                        <button class="view-report-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT 3 -->
+
+                <div
+                    class="report-card"
+                    data-type="prescription"
+                    data-search="heart prescription dr rohan mehta cardiologist"
+                >
+
+                    <div class="report-card-header">
+
+                        <div class="report-file-icon prescription">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+
+                        <button class="report-menu">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card-body">
+
+                        <h3>
+                            Heart Medication
+                        </h3>
+
+                        <p>
+                            Prescription Document
+                        </p>
+
+
+                        <div class="report-meta">
+
+                            <span>
+                                <i class="bi bi-calendar3"></i>
+                                10 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-person"></i>
+                                Dr. Rohan Mehta
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-card-footer">
+
+                        <span class="report-type prescription-type">
+                            Prescription
+                        </span>
+
+
+                        <button class="view-report-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT 4 -->
+
+                <div
+                    class="report-card"
+                    data-type="scan"
+                    data-search="chest x ray radiology scan"
+                >
+
+                    <div class="report-card-header">
+
+                        <div class="report-file-icon scan">
+                            <i class="bi bi-file-earmark-image"></i>
+                        </div>
+
+                        <button class="report-menu">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card-body">
+
+                        <h3>
+                            Chest X-Ray
+                        </h3>
+
+                        <p>
+                            Chest Radiology Report
+                        </p>
+
+
+                        <div class="report-meta">
+
+                            <span>
+                                <i class="bi bi-calendar3"></i>
+                                05 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-hospital"></i>
+                                City Care Hospital
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-card-footer">
+
+                        <span class="report-type scan-type">
+                            Scan
+                        </span>
+
+
+                        <button class="view-report-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REPORT 5 -->
+
+                <div
+                    class="report-card"
+                    data-type="other"
+                    data-search="doctor consultation notes general physician"
+                >
+
+                    <div class="report-card-header">
+
+                        <div class="report-file-icon other">
+                            <i class="bi bi-file-earmark"></i>
+                        </div>
+
+                        <button class="report-menu">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="report-card-body">
+
+                        <h3>
+                            Consultation Notes
+                        </h3>
+
+                        <p>
+                            General Physician Notes
+                        </p>
+
+
+                        <div class="report-meta">
+
+                            <span>
+                                <i class="bi bi-calendar3"></i>
+                                02 Aug 2026
+                            </span>
+
+                            <span>
+                                <i class="bi bi-person"></i>
+                                Dr. Amit Patel
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-card-footer">
+
+                        <span class="report-type other-type">
+                            Other
+                        </span>
+
+
+                        <button class="view-report-btn">
+
+                            <i class="bi bi-eye"></i>
+
+                            View
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= UPLOAD MODAL ================= -->
+
+    <div
+        class="report-modal-overlay"
+        id="reportModal"
+    >
+
+        <div class="report-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Upload Medical Report</h2>
+
+                    <p>
+                        Add a medical document to your records.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-modal"
+                    id="closeReportModal"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="reportForm">
+
+
+                <!-- FILE -->
+
+                <div class="upload-area" id="uploadArea">
+
+                    <i class="bi bi-cloud-arrow-up"></i>
+
+                    <h3>
+                        Upload your report
+                    </h3>
+
+                    <p>
+                        PDF, JPG or PNG
+                    </p>
+
+                    <span>
+                        Maximum file size: 10 MB
+                    </span>
+
+                    <input
+                        type="file"
+                        id="reportFile"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        hidden
+                    >
+
+                    <button
+                        type="button"
+                        id="chooseFileBtn"
+                        class="choose-file-btn"
+                    >
+                        Choose File
+                    </button>
+
+                    <div
+                        id="selectedFile"
+                        class="selected-file"
+                    ></div>
+
+                </div>
+
+
+                <!-- REPORT NAME -->
+
+                <div class="form-field">
+
+                    <label>
+                        Report Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reportName"
+                        placeholder="e.g. Blood Test Report"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TYPE -->
+
+                <div class="form-row">
+
+                    <div class="form-field">
+
+                        <label>
+                            Report Type
+                        </label>
+
+                        <select
+                            id="reportType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Type
+                            </option>
+
+                            <option value="lab">
+                                Lab Report
+                            </option>
+
+                            <option value="prescription">
+                                Prescription
+                            </option>
+
+                            <option value="scan">
+                                Scan
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label>
+                            Report Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="reportDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- HOSPITAL -->
+
+                <div class="form-field">
+
+                    <label>
+                        Hospital / Doctor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="reportProvider"
+                        placeholder="e.g. City Care Hospital"
+                    >
+
+                </div>
+
+
+                <!-- NOTES -->
+
+                <div class="form-field">
+
+                    <label>
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="reportNotes"
+                        rows="3"
+                        placeholder="Add additional notes..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelReport"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+
+                        <i class="bi bi-cloud-arrow-up"></i>
+
+                        Upload Report
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= VIEW MODAL ================= -->
+
+    <div
+        class="report-modal-overlay"
+        id="viewReportModal"
+    >
+
+        <div class="report-view-modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>Report Details</h2>
+
+                    <p>
+                        Medical Report
+                    </p>
+
+                </div>
+
+                <button
+                    class="close-modal"
+                    id="closeViewReport"
+                >
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+
+            <div id="reportViewContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="medical-reports.js"></script>
+
+</body>
+
+</html>
