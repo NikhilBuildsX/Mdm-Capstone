@@ -138,10 +138,9 @@ const navigationLinks =
 
 navigationLinks.forEach((link) => {
 
-    link.addEventListener("click", function (event) {
+    link.addEventListener("click", function () {
 
-        event.preventDefault();
-
+        
         navigationLinks.forEach((item) => {
             item.classList.remove("active");
         });
